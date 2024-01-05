@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="" name="description" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+  <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <!-- Title -->
+  <title>
+    Contact Messages | HealthNow!
+  </title>
+  <!-- Master Stylesheet [If you remove this CSS file, your file will be broken undoubtedly.] -->
+  <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="lds-hourglass">
+    </div>
+  </div>
+  <!-- Main Content-->
+  <div class="main-container-wrapper">
+    <!-- Top bar area -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo" href="{{ url_for('dashboard') }}">
+          <h2 style="color: white">
+            HealthNow
+          </h2>
+        </a>
+        <a class="navbar-brand brand-logo-mini" href="#">
+          <h2 style="color: white">
+            H
+          </h2>
+        </a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
+        <button class="navbar-toggler navbar-toggler align-self-center" data-toggle="minimize" type="button">
+          <span>
+            <svg class="feather feather-menu" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <line x1="3" x2="21" y1="12" y2="12">
+              </line>
+              <line x1="3" x2="21" y1="6" y2="6">
+              </line>
+              <line x1="3" x2="21" y1="18" y2="18">
+              </line>
+            </svg>
+          </span>
+        </button>
+        <ul class="navbar-nav mr-lg-2">
+          <li class="nav-item app-search d-none d-sm-block">
+            Welcome LordGhostX
+          </li>
+        </ul>
+        <ul class="top-navbar-area navbar-nav navbar-nav-right">
+          <li class="nav-item dropdown dropdown-animate country">
+            <a class="nav-link" href="{{ url_for('dashboard') }}">
+              <i class="fa fa-home">
+              </i>
+              Home
+            </a>
+          </li>
+          <li class="nav-item dropdown dropdown-animate country">
+            <a class="nav-link" href="{{ url_for('contact') }}">
+              <i class="fa fa-headphones">
+              </i>
+              Contact Us
+            </a>
+          </li>
+          <li class="nav-item dropdown dropdown-animate country">
+            <a class="nav-link" href="blog.html">
+              <i class="fa fa-book">
+              </i>
+              Blog
+            </a>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-xl-none align-self-center" data-toggle="offcanvas" type="button">
+          <span>
+            <svg class="feather feather-grid menu-bar-icon" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <rect height="7" width="7" x="3" y="3">
+              </rect>
+              <rect height="7" width="7" x="14" y="3">
+              </rect>
+              <rect height="7" width="7" x="14" y="14">
+              </rect>
+              <rect height="7" width="7" x="3" y="14">
+              </rect>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </nav>
+    <div class="container-fluid page-body-wrapper">
+      <!-- Side Menu area -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="messages.html">
+              <i class="fa fa-envelope link-icon">
+              </i>
+              <span class="menu-title">
+                Messages
+              </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('dashboard') }}">
+              <i class="fa fa-book link-icon">
+              </i>
+              <span class="menu-title">
+                Blog
+              </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('logout') }}">
+              <i class="fa fa-power-off link-icon">
+              </i>
+              <span class="menu-title">
+                Logout
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- Mani Page -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <!-- Start page title -->
+          <div class="row">
+            <div class="col-12">
+              <div class="page-title-box d-flex justify-content-between mb-30">
+                <div class="page-title-right">
+                  <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item">
+                      <a href="{{ url_for('dashboard') }}">
+                        HealthNow
+                      </a>
+                    </li>
+                    <li class="breadcrumb-item active">
+                      Contact Messages
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end page title -->
+          <!-- main content -->
+          <div class="row justify-content-center">
+            <!--  Single Contact Area -->
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex">
+                    <div>
+                      <h4 class="font-18">
+                        Solomon Esenyi
+                      </h4>
+                      <p>
+                        dosolomon5@gmail.com
+                      </p>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--  Single Contact Area -->
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex">
+                    <div>
+                      <h4 class="font-18">
+                        Solomon Esenyi
+                      </h4>
+                      <p>
+                        dosolomon5@gmail.com
+                      </p>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end main content -->
+        </div>
+        <!-- Footer Area -->
+        <div class="footer-area footer">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <!-- Footer Area -->
+                <div class="d-sm-flex align-items-center justify-content-between">
+                  <!-- Copywrite Text -->
+                  <div class="copywrite-text">
+                    <p>
+                      Copyright © HealthNow 2020. All Rights Reserved.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ======================================
+    ********* Page Wrapper Area End ***********
+    ======================================= -->
+  <!-- Must needed plugins to the run this Template -->
+  <script src="{{ url_for('static', filename = 'js/jquery.min.js') }}">
+  </script>
+  <script src="{{ url_for('static', filename = 'js/popper.min.js') }}">
+  </script>
+  <script src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}">
+  </script>
+  <script src="{{ url_for('static', filename = 'js/bundle.js') }}">
+  </script>
+  <script src="{{ url_for('static', filename = 'js/vivus.min.js') }}">
+  </script>
+  <script src="{{ url_for('static', filename = 'js/svg.animation.js') }}">
+  </script>
+  <!-- Inject JS -->
+  <script src="{{ url_for('static', filename = 'js/canvas.js') }}">
+  </script>
+  <script src="{{ url_for('static', filename = 'js/collapse.js') }}">
+  </script>
+  <script src="{{ url_for('static', filename = 'js/settings.js') }}">
+  </script>
+  <script src="{{ url_for('static', filename = 'js/default-assets/active.js') }}">
+  </script>
+</body>
+
+</html>

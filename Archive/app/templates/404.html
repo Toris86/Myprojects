@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="" name="description" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+  <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <!-- Title -->
+  <title>
+    Page Not Found | HealthNow!
+  </title>
+  <!-- Master Stylesheet [If you remove this CSS file, your file will be broken undoubtedly.] -->
+  <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="lds-hourglass">
+    </div>
+  </div>
+  <!-- Error Page Area -->
+  <div class="error-page-area">
+    <!-- Error Content -->
+    <div class="error-content text-center py-5 px-4">
+      <!-- Error Thumb -->
+      <div class="error-thumb">
+        <img alt="" src="{{ url_for('static', filename = 'img/bg-img/1.png') }}" />
+      </div>
+      <h2>
+        Oops! This Page Is Missing!
+      </h2>
+      <p>
+        Sorry, but the page you are looking for does not exist, has been removed or had it's name changed
+      </p>
+      <a class="btn btn-rounded btn-primary" href="{{ url_for('dashboard') }}">
+        Back To Home
+      </a>
+    </div>
+  </div>
+  <!-- Must needed plugins to the run this Template -->
+  <script src="{{ url_for('static', filename = 'js/jquery.min.js') }}">
+  </script>
+  <script src="{{ url_for('static', filename = 'js/popper.min.js') }}">
+  </script>
+  <script src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}">
+  </script>
+  <script src="{{ url_for('static', filename = 'js/bundle.js') }}">
+  </script>
+  <!-- Active JS -->
+  <script src="{{ url_for('static', filename = 'js/default-assets/active.js') }}">
+  </script>
+</body>
+
+</html>

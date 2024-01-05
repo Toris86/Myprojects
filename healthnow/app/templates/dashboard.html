@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+<!-- main content -->
+<div class="row justify-content-center">
+  <div class="col-lg-6">
+    <div class="card card-body">
+      <h4 class="mb-10 text-center">
+        Weight Management
+      </h4>
+      <p class="card-text mb-30">
+        Weight management is the catch phrase used to define both the techniques and basic physiological processes that contribute to a person's ability to attain and maintain a certain weight. Most weight management techniques involve long-term
+        lifestyle strategies that promote healthy eating and daily physical activity. Moreover, weight management involves developing meaningful ways to track weight over time and to identify ideal body weights for different individuals.
+      </p>
+      <p class="card-text mb-30">
+        HealthNow!! is all about encouraging you to maintain a healthy lifestyle. It is not about meeting your weight goals but also encouraging you commit to this lifestyle happily because you have a feedback to guide you on your healthy lifestyle
+        journey.
+      </p>
+      <a class="btn btn-primary waves-effect waves-light" href="{{ url_for('weight_management') }}">
+        Get Started
+      </a>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card card-body">
+      <h4 class="mb-10 text-center">
+        Cholesterol Management
+      </h4>
+      <p class="card-text mb-30">
+        Cholesterol is a waxy, fatlike substance. It is produced by the liver and is present in dietary sources. It is a major component of cell membranes and is used to make hormones, vitamin D, and bile acids used in digestion.
+        Cholesterol is carried through the blood on lipoproteins. There are two major types of lipoproteins:
+        High-density lipoprotein (HDL), often called “good” cholesterol
+        Low-density lipoprotein (LDL), often called “bad” cholesterol
+        Excess LDL cholesterol is deposited in the walls of arteries throughout the body. This can lead to ASCVD, which includes heart attack, stroke, transient ischemic attack (TIA), stable or unstable angina, and peripheral artery disease (PAD),
+        including aortic aneurysm, all atherosclerotic origin.
+      </p>
+      <p class="card-text mb-30">
+        HealthNow is all about assisting you to closely monitor your cholesterol levels in an organic way.
+        We use the word organic because there are several test kits out there which is good BUT you still need to see your doctor to get the result.
+      </p>
+      <p class="card-text mb-30">
+        HealthNow is all about helping you manage your levels by keeping you committed to the lifestyle that can get you close to achieving your acceptable cholesterol levels.
+        <br><br>
+        HealthNow is all about your health lifestyle, HealthNow is all about YOU!!
+      </p>
+      <a class="btn btn-primary waves-effect waves-light" href="{{ url_for('cholesterol_management') }}">
+        Get Started
+      </a>
+    </div>
+  </div>
+</div>
+<!-- end main content -->
+{% endblock %}

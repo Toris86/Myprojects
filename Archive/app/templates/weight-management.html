@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block title %}
+Weight Management
+{% endblock %}
+
+{% block content %}
+<!-- main content -->
+<div class="row justify-content-center">
+  <div class="col-lg-6">
+    <div class="card card-body">
+      <h4 class="text-center">
+        Your Most Recent BMI
+      </h4>
+      <div class="row">
+        <div class="col-sm-12 col-xs-12">
+          <form>
+            <div class="form-group">
+              <label>
+                Your BMI
+              </label>
+              <input class="form-control" readonly="" type="text" value="{{ last_record.bmi }}" />
+            </div>
+            <div class="form-group">
+              <label>
+                Based On Your Recorded BMI, Your Weight Category is
+              </label>
+              <input class="form-control" readonly="" type="text" value="{{ bmi }}" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card card-body">
+      <h4 class="text-center">
+        Weight Management
+      </h4>
+      <div class="row">
+        <div class="col-sm-12 col-xs-12">
+          <form method="POST">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <p class="text-{{ category }} text-center">
+              {{ message }}
+            </p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <div class="form-group">
+              <label>
+                Height (feet and inches - 5'5)
+              </label>
+              <input class="form-control" placeholder="Enter your height in feet and inches" required="" type="text" name="height" />
+            </div>
+            <div class="form-group">
+              <label>
+                Weight (pounds)
+              </label>
+              <input class="form-control" placeholder="Enter your weight in pounds" required="" type="text" name="weight" />
+            </div>
+            <div class="form-group">
+              <label>
+                Daily Calorie Intake
+              </label>
+              <input class="form-control" placeholder="Enter your daily calorie intake" required="" type="text" name="calorie_intake" />
+            </div>
+            <div class="form-group">
+              <label>
+                Date
+              </label>
+              <input class="form-control" required="" type="date" name="date" />
+            </div>
+            <div class="form-group text-center">
+              <button class="btn btn-block btn-primary" type="submit">
+                Record Data
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card card-body">
+      <a class="btn btn-primary waves-effect waves-light" href="{{ url_for('compare') }}">
+        <i class="fa fa-search">
+        </i>
+        Compare Data
+      </a>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card card-body">
+      <a class="btn btn-primary waves-effect waves-light" href="{{ url_for('advisory') }}">
+        <i class="fa fa-user-md">
+        </i>
+        Advisory
+      </a>
+    </div>
+  </div>
+</div>
+<!-- end main content -->
+{% endblock %}

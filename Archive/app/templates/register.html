@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="" name="description" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+  <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <!-- Title -->
+  <title>
+    Create an account on HealthNow!
+  </title>
+  <!-- Master Stylesheet [If you remove this CSS file, your file will be broken undoubtedly.] -->
+  <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet" />
+</head>
+
+<body class="login-area">
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="lds-hourglass">
+    </div>
+  </div>
+  <!-- ======================================
+    ******* Page Wrapper Area Start **********
+    ======================================= -->
+  <div class="main-content- bg-overlay-white bg-img" style="background-image: url({{ url_for('static', filename = 'img/bg-img/11.jpg') }})">
+    <div class="container h-100">
+      <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-md-7 col-lg-5 mx-auto">
+          <!-- Middle Box -->
+          <div class="middle-box">
+            <div class="card">
+              <div class="card-body p-4 text-center">
+                <h4 class="font-22">
+                  HealthNow!
+                </h4>
+                <p>
+                  Please create an account using the form below.
+                </p>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                {% for category, message in messages %}
+                <p class="text-{{ category }}">
+                  {{ message }}
+                </p>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                <form method="POST">
+                  <div class="form-group">
+                    <label class="float-left">
+                      First Name
+                    </label>
+                    <input class="form-control" placeholder="Enter your first name" required="" type="text" name="first_name" />
+                  </div>
+                  <div class="form-group">
+                    <label class="float-left">
+                      Last Name
+                    </label>
+                    <input class="form-control" placeholder="Enter your last name" required="" type="text" name="last_name" />
+                  </div>
+                  <div class="form-group">
+                    <label class="float-left">
+                      Email address
+                    </label>
+                    <input class="form-control" placeholder="Enter your email address" required="" type="email" name="email" />
+                  </div>
+                  <div class="form-group">
+                    <label class="float-left">
+                      Gender
+                    </label>
+                    <select class="form-control" required="" name="gender">
+                      <option>
+                        Male
+                      </option>
+                      <option>
+                        Female
+                      </option>
+                      <option>
+                        Other
+                      </option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="float-left">
+                      Date of Birth
+                    </label>
+                    <input class="form-control" required="" type="date" name="dob" />
+                  </div>
+                  <div class="form-group">
+                    <label class="float-left">
+                      Password
+                    </label>
+                    <input class="form-control" placeholder="Enter your password" required="" type="password" name="password" />
+                  </div>
+                  <div class="form-group">
+                    <label class="float-left">
+                      Confirm Password
+                    </label>
+                    <input class="form-control" placeholder="Confirm your password" required="" type="password" name="password_confirm" />
+                  </div>
+                  <div class="form-group mb-0">
+                    <button class="btn btn-primary btn-block" type="submit">
+                      Create Account
+                    </button>
+                  </div>
+                  <div class="form-group mb-0">
+                    <a class="text-muted" href="{{ url_for('login') }}">
+                      Already have an account? Login
+                    </a>
+                  </div>
+                </form>
+              </div>
+              <!-- end card-body -->
+            </div>
+            <!-- end card -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ======================================
+    ********* Page Wrapper Area End ***********
+    ======================================= -->
+  <!-- Must needed plugins to the run this Template -->
+  <script src="{{ url_for('static', filename = 'js/jquery.min.js') }}">
+  </script>
+  <script src="{{ url_for('static', filename = 'js/popper.min.js') }}">
+  </script>
+  <script src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}">
+  </script>
+  <script src="{{ url_for('static', filename = 'js/bundle.js') }}">
+  </script>
+  <!-- Active JS -->
+  <script src="{{ url_for('static', filename = 'js/default-assets/active.js') }}">
+  </script>
+</body>
+
+</html>

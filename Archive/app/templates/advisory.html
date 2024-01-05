@@ -1,0 +1,431 @@
+{% extends "base.html" %}
+{% block title %}
+Advisory
+{% endblock %}
+
+{% block content %}
+<!-- main content -->
+<style>
+  .card-body {
+    padding: 0.6rem;
+  }
+</style>
+<div class="row justify-content-center">
+  <div class="col-lg-6">
+    <div class="card card-body">
+      <h4 class="text-center">
+        Suggested Exercises Towards Weight Management
+      </h4>
+      <div class="row">
+        {% if user.gender == "Male" %}
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Maintain Your Calorie Intake
+              </h5>
+              <p class="card-text text-white">
+                You need 2,600 calories per day to maintain your weight and 2,100 calories per day to lose 1 pound per week.
+                <br><br>
+                If you walk more than 3 miles per day, you need 2,800–3,000 calories per day to maintain your weight and 2,300–2,500 calories per day to lose 1 pound of weight per week.
+              </p>
+            </div>
+          </div>
+        </div>
+        {% else %}
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Maintain Your Calorie Intake
+              </h5>
+              <p class="card-text text-white">
+                You need 2,000 calories per day to maintain your weight and 1,500 calories per day to lose 1 pound of weight per week.
+                <br><br>
+                If you walk more than 3 miles per day, you need 2,200 calories or more daily to maintain your weight and at least 1,700 calories to lose 1 pound of weight per week.
+              </p>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% if bmi in ["Overweight", "Obese Class I", "Obese Class II", "Obese Class III"] %}
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Mountain Climber
+              </h5>
+              <p class="card-text text-white">
+                30 Seconds Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Squats
+              </h5>
+              <p class="card-text text-white">
+                16 Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                High Stepping
+              </h5>
+              <p class="card-text text-white">
+                30 Seconds Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Push-Ups
+              </h5>
+              <p class="card-text text-white">
+                20 Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Reverse Crunches
+              </h5>
+              <p class="card-text text-white">
+                16 Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Plank
+              </h5>
+              <p class="card-text text-white">
+                2 Minutes Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Squats
+              </h5>
+              <p class="card-text text-white">
+                16 Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                High Stepping
+              </h5>
+              <p class="card-text text-white">
+                30 Seconds Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Push-Ups
+              </h5>
+              <p class="card-text text-white">
+                20 Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Reverse Crunches
+              </h5>
+              <p class="card-text text-white">
+                16 Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Plank
+              </h5>
+              <p class="card-text text-white">
+                2 Minutes Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Cobra Stretch
+              </h5>
+              <p class="card-text text-white">
+                30 Seconds Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        {% elif bmi == None %}
+        {% else %}
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Mountain Climber
+              </h5>
+              <p class="card-text text-white">
+                30 Seconds Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Squats
+              </h5>
+              <p class="card-text text-white">
+                16 Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                High Stepping
+              </h5>
+              <p class="card-text text-white">
+                30 Seconds Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Push-Ups
+              </h5>
+              <p class="card-text text-white">
+                10 Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Reverse Crunches
+              </h5>
+              <p class="card-text text-white">
+                10 Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Plank
+              </h5>
+              <p class="card-text text-white">
+                30 Seconds Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Squats
+              </h5>
+              <p class="card-text text-white">
+                16 Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                High Stepping
+              </h5>
+              <p class="card-text text-white">
+                30 Seconds Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Push-Ups
+              </h5>
+              <p class="card-text text-white">
+                10 Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Reverse Crunches
+              </h5>
+              <p class="card-text text-white">
+                10 Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Plank
+              </h5>
+              <p class="card-text text-white">
+                1 Minute, 30 Seconds Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Cobra Stretch
+              </h5>
+              <p class="card-text text-white">
+                30 Seconds Daily
+              </p>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card card-body">
+      <h4 class="text-center">
+        Suggested Activities Towards Cholesterol Management
+      </h4>
+      <div class="row">
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Daily Exercises
+              </h5>
+              <p class="card-text text-white">
+                Minimum of 30 Minutes Everyday
+              </p>
+            </div>
+          </div>
+        </div>
+        {% if cholesterol == "high" %}
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Avoid tobacco
+              </h5>
+              <p class="card-text text-white">
+                If you do smoke, quit. Smoking is bad for you in many ways, and reducing your level of good cholesterol is one of them.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Change the way you eat
+              </h5>
+              <p class="card-text text-white">
+                Limit the amount of trans fats and saturated fat. Eat heart-healthy foods like fruits, vegetables, poultry, fish and whole grains. Limit red meat, sugary products and dairy products made with whole milk.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Keep a healthy weight
+              </h5>
+              <p class="card-text text-white">
+                If you need to lose weight, talk to your healthcare provider about safe ways to do this. You’ll see results even before you reach your ideal weight. Losing even 10% of your body weight makes a difference in your cholesterol levels.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Reduce the effect of negative emotions
+              </h5>
+              <p class="card-text text-white">
+                Learn healthy ways to deal with anger, stress or other negative emotions.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Control blood sugar and blood pressure
+              </h5>
+              <p class="card-text text-white">
+                Make sure you follow your healthcare provider’s instructions for blood sugar levels, especially if you have diabetes, and for keeping blood pressure in the healthy range.
+              </p>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end main content -->
+{% endblock %}

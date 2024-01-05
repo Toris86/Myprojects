@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+{% block title %}
+Compare
+{% endblock %}
+
+{% block extras %}
+<!-- These plugins only need for the run this page -->
+<script src="{{ url_for('static', filename = 'js/default-assets/jquery.flot.js') }}">
+</script>
+<script src="{{ url_for('static', filename = 'js/default-assets/jquery.flot.resize.js') }}">
+</script>
+<script src="{{ url_for('static', filename = 'js/default-assets/jquery.flot.categories.js') }}">
+</script>
+<script src="{{ url_for('static', filename = 'js/default-assets/jquery.flot.fillbetween.js') }}">
+</script>
+<script src="{{ url_for('static', filename = 'js/default-assets/jquery.flot.stack.js') }}">
+</script>
+<script src="{{ url_for('static', filename = 'js/default-assets/jquery.flot.pie.js') }}">
+</script>
+<script>
+  ! function(e) {
+    e(function() {
+        e("#bmi-chart").length && e.plot("#bmi-chart", [
+          eval("{{ bmi|safe }}")
+        ], {
+          series: {
+            color: "#0178fa",
+            bars: {
+              show: 1,
+              barWidth: .5,
+              align: "center"
+            }
+          },
+          xaxis: {
+            mode: "categories",
+            tickLength: 0
+          },
+          grid: {
+            borderWidth: 0,
+            labelMargin: 10,
+            hoverable: 1,
+            clickable: 0,
+            mouseActiveRadius: 5
+          }
+        })
+      }),
+      e(function() {
+        e("#cholesterol-chart").length && e.plot("#cholesterol-chart", [
+          eval("{{ cholesterol|safe }}")
+        ], {
+          series: {
+            color: "#0178fa",
+            bars: {
+              show: 1,
+              barWidth: .5,
+              align: "center"
+            }
+          },
+          xaxis: {
+            mode: "categories",
+            tickLength: 0
+          },
+          grid: {
+            borderWidth: 0,
+            labelMargin: 10,
+            hoverable: 1,
+            clickable: 0,
+            mouseActiveRadius: 5
+          }
+        })
+      }),
+      e(function() {
+        e("#exercises-chart").length && e.plot("#exercises-chart", [
+          eval("{{ exercises|safe }}")
+        ], {
+          series: {
+            color: "#0178fa",
+            bars: {
+              show: 1,
+              barWidth: .5,
+              align: "center"
+            }
+          },
+          xaxis: {
+            mode: "categories",
+            tickLength: 0
+          },
+          grid: {
+            borderWidth: 0,
+            labelMargin: 10,
+            hoverable: 1,
+            clickable: 0,
+            mouseActiveRadius: 5
+          }
+        })
+      }),
+      e(function() {
+        e("#weight-chart").length && e.plot("#weight-chart", [
+          eval("{{ weight|safe }}")
+        ], {
+          series: {
+            color: "#0178fa",
+            bars: {
+              show: 1,
+              barWidth: .5,
+              align: "center"
+            }
+          },
+          xaxis: {
+            mode: "categories",
+            tickLength: 0
+          },
+          grid: {
+            borderWidth: 0,
+            labelMargin: 10,
+            hoverable: 1,
+            clickable: 0,
+            mouseActiveRadius: 5
+          }
+        })
+      })
+  }(jQuery);
+</script>
+{% endblock %}
+
+{% block content %}
+<!-- main content -->
+<div class="row justify-content-center">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">
+          {{ user.first_name }}'s BMI Chart Over The Past Week
+        </h4>
+        <div class="flot-chart-container">
+          <div class="flot-chart" id="bmi-chart">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">
+          {{ user.first_name }}'s Cholesterol Chart Over The Past Week
+        </h4>
+        <div class="flot-chart-container">
+          <div class="flot-chart" id="cholesterol-chart">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">
+          {{ user.first_name }}'s Weight Chart Over The Past Week
+        </h4>
+        <div class="flot-chart-container">
+          <div class="flot-chart" id="weight-chart">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">
+          {{ user.first_name }}'s Exercises Chart Over The Past Week
+        </h4>
+        <div class="flot-chart-container">
+          <div class="flot-chart" id="exercises-chart">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end main content -->
+{% endblock %}

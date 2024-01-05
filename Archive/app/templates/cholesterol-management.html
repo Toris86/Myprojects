@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+{% block title %}
+Cholesterol Management
+{% endblock %}
+
+{% block content %}
+<!-- main content -->
+<style>
+  .card-body {
+    padding: 0.6rem;
+  }
+</style>
+<div class="row justify-content-center">
+  <div class="col-lg-6">
+    <div class="card card-body">
+      <h4 class="text-center">
+        Cholesterol Management
+      </h4>
+      <div class="row">
+        <div class="col-sm-12 col-xs-12">
+          <form method="POST">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <p class="text-{{ category }} text-center">
+              {{ message }}
+            </p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <div class="form-group">
+              <label>
+                Total Cholesterol Level<span class="text-danger">*</span>
+              </label>
+              <input class="form-control" placeholder="Cholesterol Level" type="text" name="cholesterol" required />
+            </div>
+            <div class="form-group">
+              <label>
+                HDL Cholesterol Level
+              </label>
+              <input class="form-control" placeholder="HDL Cholesterol Level" type="text" name="hdl_cholesterol" />
+            </div>
+            <div class="form-group">
+              <label>
+                LDL Cholesterol Level
+              </label>
+              <input class="form-control" placeholder="LDL Cholesterol Level" type="text" name="ldl_cholesterol" />
+            </div>
+            <div class="form-group">
+              <label>
+                Target Cholesterol Level<span class="text-danger">*</span>
+              </label>
+              <input class="form-control" placeholder="Target Cholesterol Level" type="text" name="target" required />
+            </div>
+            <div class="form-group">
+              <label>
+                Exercises Length (minutes)<span class="text-danger">*</span>
+              </label>
+              <input class="form-control" placeholder="Exercises Length in Minutes" type="text" name="exercises" required />
+            </div>
+            <div class="form-group">
+              <label>
+                Date<span class="text-danger">*</span>
+              </label>
+              <input class="form-control" required="" type="date" name="date" required />
+            </div>
+            <div class="form-group text-center">
+              <button class="btn btn-block btn-primary" type="submit">
+                Save Details
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card card-body">
+      <h4 class="text-center">
+        Suggested Activities
+      </h4>
+      <div class="row">
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Daily Exercises
+              </h5>
+              <p class="card-text text-white">
+                Minimum of 30 Minutes Everyday
+              </p>
+            </div>
+          </div>
+        </div>
+        {% if cholesterol == "high" %}
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Avoid tobacco
+              </h5>
+              <p class="card-text text-white">
+                If you do smoke, quit. Smoking is bad for you in many ways, and reducing your level of good cholesterol is one of them.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Change the way you eat
+              </h5>
+              <p class="card-text text-white">
+                Limit the amount of trans fats and saturated fat. Eat heart-healthy foods like fruits, vegetables, poultry, fish and whole grains. Limit red meat, sugary products and dairy products made with whole milk.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Keep a healthy weight
+              </h5>
+              <p class="card-text text-white">
+                If you need to lose weight, talk to your healthcare provider about safe ways to do this. You’ll see results even before you reach your ideal weight. Losing even 10% of your body weight makes a difference in your cholesterol levels.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Reduce the effect of negative emotions
+              </h5>
+              <p class="card-text text-white">
+                Learn healthy ways to deal with anger, stress or other negative emotions.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-body">
+              <h5 class="text-white">
+                Control blood sugar and blood pressure
+              </h5>
+              <p class="card-text text-white">
+                Make sure you follow your healthcare provider’s instructions for blood sugar levels, especially if you have diabetes, and for keeping blood pressure in the healthy range.
+              </p>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end main content -->
+{% endblock %}

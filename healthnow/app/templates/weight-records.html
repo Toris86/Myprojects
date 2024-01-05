@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}
+Weight Records
+{% endblock %}
+
+{% block content %}
+<!-- main content -->
+<div class="row justify-content-center">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body table-responsive">
+        <h4 class="card-title mb-2">Your Daily Weight Records</h4>
+        <table class="table table-striped nowrap w-100">
+          <thead>
+            <tr>
+              <th>Height (inches)</th>
+              <th>Weight (pounds)</th>
+              <th>Calories</th>
+              <th>BMI</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in records %}
+            <tr>
+              <td>{{ i.height }}</td>
+              <td>{{ i.weight }}</td>
+              <td>{{ i.calories }}</td>
+              <td>{{ "{:.2f}".format(i.bmi) }}</td>
+              <td>{{ i.record_date }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div> <!-- end card body-->
+    </div> <!-- end card -->
+  </div><!-- end col-->
+</div>
+<!-- end main content -->
+{% endblock %}
